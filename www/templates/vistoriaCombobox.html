@@ -1,0 +1,11 @@
+<ion-view title="Etapa {{step}}" class=" ">
+    <ion-content padding="true" class="has-header">
+      <div>
+        <pre>{{pergunta}}</pre>
+      </div>
+      <select ng-model="selectedOption" class="item item-select " style="width: 100%">
+        <option ng-repeat="c in opcoesCombobox">{{c.item}}</option>
+      </select>
+      <a ng-click="actionNext(selectedOption)" class="button button-positive  button-block ">Próximo</a>
+    </ion-content>
+</ion-view>

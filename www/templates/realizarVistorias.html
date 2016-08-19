@@ -1,0 +1,25 @@
+<ion-view title="Realizar Vistorias" hide-back-button="true">
+    <ion-content padding="true" class="has-header">
+        <!-- foi adicionado o style="padding-top: 10px;" pois o padding difere do arquivo "enviarVistorias.html", sem motivo aparente -->
+        <p class="mensagem-erro" ng-show="mostrarMensagemErro" style="padding-top: 10px;">
+            <i class="icon ion-android-cancel"></i>
+            Verifique sua conexão!
+        </p>
+        <ion-list>
+            <ion-item ng-repeat="vs in listaAgendamentos" class="item-avatar positive" ui-sref="menu.vistoriaDetalhes({sinistroId: $index})">
+                <img src="img/vistoria_agendada.png">
+
+                <h2positive>{{vs.sinistro.segurado}}
+                    <p>{{vs.sinistro.cidade}} - {{vs.sinistro.bairro}}</p>
+                    
+                    <div ng-class="{assertive: !vs.sinistro.mostrarDistancia}"> <!-- 'assertive' caso 'mostrarDistancia' seja false -->
+                        <i class="icon ion-android-pin"></i>
+                        {{vs.sinistro.distancia || "Impossível rastrear sua localização!"}} <!-- se 'distancia' for do tipo 'empty', exibe erro -->
+                    </div>
+                </h2positive>
+
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

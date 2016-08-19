@@ -1,0 +1,13 @@
+<ion-view title="Etapa {{step}}" id="page14" class=" ">
+    <ion-content padding="true" class="has-header">
+      <div>
+        <pre>{{pergunta}}</pre>
+      </div>
+      <form id="vistoriaDescritivo-form5" class="list ">
+          <label class="item item-input " name="detalhes">
+            <textarea ng-model="extraField" rows="6" placeholder="Descreva {{pergunta}}">{{extraField}}</textarea>
+        </label>
+      </form>
+      <a ng-click="actionNext(extraField)" class="button button-positive  button-block ">Próximo</a>
+    </ion-content>
+</ion-view>

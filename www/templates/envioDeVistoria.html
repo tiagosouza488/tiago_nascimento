@@ -1,0 +1,30 @@
+<ion-view title="Enviar Vistorias">
+    <ion-content padding="true" class="has-header">
+
+        <div class="card">
+            <!-- MENSAGEM TOPO -->
+            <h1 ng-class="temFotos === true ? 'positive' : 'assertive'" class="item item-text-wrap" ng-cloak>
+                {{mensagemTopo}}
+            </h1>
+            <!-- GRID DE FOTOS -->
+            <div ng-show="pictures.length > 0" class="row row-wrap">
+                <!-- LINHAS -->
+                <div class="col-25" ng-repeat="foto in pictures" item="foto">
+                    <!-- COLUNAS -->
+                    <img ng-src="{{foto.toShow}}" width="100%"/>
+                    
+                    <sub ng-show="!removerAviso" class="positive">
+                        <ion-spinner ng-show="foto.envioStatus === 'ENVIANDO'" class="spinner-azul" ></ion-spinner>
+                        <i ng-show="foto.envioStatus === 'OK'" class="ion-ios-checkmark icon"></i>
+                        <i ng-show="foto.envioStatus === 'ERRO'" class="ion-android-cancel icon assertive"></i> 
+                        {{foto.progresso}}
+                    </sub>
+                </div>
+
+            </div>
+            <!-- FIM DO GRID -->
+        </div>
+        <!-- FIM DO CARD -->
+
+    </ion-content>
+</ion-view>

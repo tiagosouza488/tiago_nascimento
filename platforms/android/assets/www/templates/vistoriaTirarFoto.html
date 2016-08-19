@@ -1,0 +1,19 @@
+<ion-view title="Etapa {{step}}" id="page15" class=" ">
+    <ion-content padding="true" class="has-header">
+        <p id="vistoriaTirarFoto-markdown10" style="color:#000000;" class=" ">
+          {{pergunta}}
+        </p>
+        <button class=" button button-positive button-block " ng-click="actionNext()" ng-show="showExtra">Próximo</button>
+        <button class=" button button-positive button-block " ng-click="actionTirarFoto()">Nova Foto</button>
+        <ion-list>
+          <ion-item  ng-repeat="pic in pictureList" class="item-thumbnail-left" ui-sref="menu.vistoriaVerFoto({picture: pic.toShow, picId: pic.id})">
+              <div class="item item-image">
+                <img ng-src="{{pic.toShow}}"/>
+              </div>
+                <h2>Foto - {{pic.id}}</h2>
+                <p>{{pic.name}}</p>
+            </ion-item>
+          </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

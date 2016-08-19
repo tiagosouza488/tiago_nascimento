@@ -1,0 +1,15 @@
+<ion-view title="Etapa {{step}}" id="page14" class=" ">
+    <ion-content padding="true" class="has-header">
+        <div>
+          <pre>{{pergunta}}</pre><br>
+        </div>
+        <ion-toggle ng-change="changeSetting(item)" ng-repeat="item in optionsList" ng-model="item.checked" ng-checked="item.checked">
+          {{ item.text }}
+        </ion-toggle><br>
+        <pre ng-show="showExtra">{{textLabel}}</pre><br>
+        <label class="item item-input " ng-show="showExtra" name="detalhes">
+            <textarea ng-model="extraField" rows="6" placeholder="Descreva {{textLabel}}">{{extraField}}</textarea>
+        </label>
+      <a ng-click="actionNext(extraField)" class="button button-positive  button-block ">Próximo</a>
+    </ion-content>
+</ion-view>

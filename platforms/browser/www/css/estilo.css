@@ -1,0 +1,20 @@
+.mensagem-erro {
+  display: block;
+  font-size: 150%;
+  font-family: sans-serif;
+  text-align: center;
+  color: #cc0000;
+}
+.loading-container .loading {
+    background-color: white;
+    color: black;
+}
+.spinner-azul svg {
+  width: 18px;
+  height: 18px;
+  stroke: #39f;
+  fill: #33f;
+}
+.row-wrap {
+  flex-wrap: wrap;
+}

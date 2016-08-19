@@ -1,0 +1,21 @@
+<ion-view hide-back-button="false" title="Itens reclamados {{step}}" class=" ">
+    <ion-content padding="true" class="has-header">
+        <p>{{mensagem}}</p>
+        <ion-list show-delete="false" can-swipe="false" swipe-direction="both">
+            <ion-item ng-repeat="item in itemList track by $index" class="item item-icon-left item-icon-right" ng-click="actionTakePicture({{$index}})">
+                <i class="icon ion-camera"></i>
+                <h2positive>{{$index+1}} - {{item.descricao}}
+                    <p>Quantidade: {{item.qtd}}</p>
+                </h2positive>
+                <i class="icon ion-checkmark-round balanced" ng-show="item.hasPicture"></i>
+            </ion-item>
+        </ion-list>
+        <div class="row">
+            <div class="col text-center">
+                <button class="button button-positive button-block" ng-click="actionNext()">
+                    &nbsp;&nbsp;&nbsp;Proximo&nbsp;&nbsp;&nbsp;
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+{
+  "name": "AvisoDeSinistroMenu",
+  "app_id": "4d109cba",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost/aviso-de-sinistro/services/public_html/v1"
+    }
+  ]
+}

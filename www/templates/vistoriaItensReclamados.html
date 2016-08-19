@@ -1,0 +1,43 @@
+<script id = "addItemModal.html" type = "text/ng-template">
+<ion-modal-view>
+    <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title">Novo Item</h1>
+        <button class="button button-clear button-primary" ng-click="modal.hide()">Cancelar</button>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div class="list">
+        <label class="item item-input">
+            <span class="input-label">Quantidade</span>
+            <input ng-model="newItem.qtd" type="number">
+        </label>
+        <label class="item item-input">
+            <textarea ng-model="newItem.descricao" rows="6" placeholder="Descrição">{{extraField}}</textarea>
+        </label>
+        <button class="button button-full button-positive" ng-click="save(newItem)">Salvar</button>
+        </div>
+    </ion-content>
+</ion-modal-view>
+</script>
+
+<ion-view hide-back-button="false" title="Itens reclamados {{step}}" class=" ">
+    <ion-content padding="true" class="has-header">
+        <p>{{mensagem}}</p>
+        <ion-list show-delete="false" can-swipe="true" swipe-direction="both">
+            <ion-item ng-repeat="item in itemList track by $index" class="item positive" ng-click="edit({{$index}})">
+                <h2positive>{{$index+1}} - {{item.descricao}}
+                    <p>Quantidade: {{item.qtd}}</p>
+                </h2positive>
+                <!--ion-option-button ng-click="edit({{$index}})" class="button-positive icon ion-edit"></ion-option-button-->
+                <ion-option-button ng-click="remove({{$index}})" class="button-assertive icon ion-trash-a"></ion-option-button>
+            </ion-item>
+        </ion-list>
+        <div class="row">
+            <div class="col text-center">
+                <button class="button button-positive icon ion-plus-round" ng-click="modal.show()"></button>
+                <button class="button button-positive" ng-click="actionNext()">
+                    &nbsp;&nbsp;&nbsp;Proximo&nbsp;&nbsp;&nbsp;
+                </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

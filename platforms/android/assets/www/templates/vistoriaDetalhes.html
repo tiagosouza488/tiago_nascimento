@@ -1,0 +1,25 @@
+<ion-view title="Vistoria Detalhes" id="page11" class=" ">
+    <ion-content padding="true" scroll="false" class="has-header">
+      <h4 id="iniciandoVistoria-heading1" style="color:#000000;">{{sinistro.segurado}}</h4>
+      <div>
+          <p>
+              <b>Sinistro: </b>{{sinistro.sinistro}}
+              <br>
+              <b>Contato: </b>{{sinistro.contato}}
+              <br>
+              <b>Produto: </b>{{sinistro.produto}}
+              <br>
+              <b>Cobertura: </b>{{sinistro.cobertura}}
+              <br>
+              <b>Data Sinistro: </b>{{sinistro.data_sinistro}}
+              <br>
+              <b>Endereço: </b>
+              <br>{{sinistro.rua}}, {{sinistro.numero}}
+              <br>Cep: {{sinistro.cep}}
+              <br>{{sinistro.bairro}} - {{sinistro.cidade}}
+          </p>
+      </div>
+      <!--a ui-sref="menu.vistoriaProcessoEtapa01({sinistroId: cursorIndex})" class="button button-positive  button-block">Iniciar Vistoria</a-->
+      <a ng-click="actionNext(cursorIndex)" class="button button-positive  button-block">Iniciar Vistoria</a>
+    </ion-content>
+</ion-view>

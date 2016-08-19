@@ -1,0 +1,18 @@
+<ion-view title="Etapa {{step}}" id="page12" class=" ">
+    <ion-content padding="true" class="has-header">
+        <div>
+          <pre>{{pergunta}}</pre>
+        </div>
+        <div id="vistoriaSimNao-button-bar2" class=" button-bar ">
+            <button ng-click="actionYes()" class=" button {{buttonYes}} button-block ">Sim</button>
+            <button ng-click="actionNo()" class=" button {{buttonNo}}  button-block ">Não</button>
+        </div>
+        <!--span class="input-label" ng-show="showExtra">{{textLabel}}</span-->
+        <pre ng-show="showExtra">{{textLabel}}</pre>
+        <label class="item item-input " ng-show="showExtra" name="detalhes">
+            <textarea ng-model="extraField" rows="6" placeholder="Descreva {{textLabel}}">{{extraField}}</textarea>
+        </label>
+        <pre ng-show="showExtra">{{observacao}}</pre>
+        <a ng-click="actionNext(extraField)" ng-show="showExtra" class=" button button-positive  button-block ">Próximo</a>
+    </ion-content>
+</ion-view>

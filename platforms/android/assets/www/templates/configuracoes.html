@@ -1,0 +1,7 @@
+<ion-view title="Configurações" id="page10" class=" ">
+    <ion-content padding="true" class="has-header">
+        <ion-toggle ng-change="changeSetting(item)" ng-repeat="item in settingsList" ng-model="item.checked" ng-checked="item.checked">
+          {{ item.text }}
+        </ion-toggle>
+    </ion-content>
+</ion-view>

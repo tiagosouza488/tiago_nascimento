@@ -1,0 +1,18 @@
+<ion-view title="Enviar Vistorias" hide-back-button="true">
+    <ion-content padding="true" class="has-header">
+
+        <p class="mensagem-erro" ng-show="listaVazia">
+            <i class="icon ion-android-cancel"></i>
+            Não há vistorias para enviar!
+        </p>
+
+        <ion-list ng-hide="listaVazia" ng-repeat="pendente in vistorias">
+            <ion-item class="item-thumbnail-left" ng-click="enviar(pendente)">
+                <img ng-src="{{pendente.imagem}}"/>
+                <h2> {{pendente.mensagem}} </h2>
+                <b>ID: {{pendente.sinistroId}} </b>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>

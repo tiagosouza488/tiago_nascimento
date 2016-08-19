@@ -1,0 +1,19 @@
+<ion-view title="FileSystem" id="page10" class=" ">
+    <ion-content padding="true" class="has-header">
+        <!--ion-list ng-repeat="item in fileList" item="item" href="#/item/{{item.id}}" class="item-remove-animate">
+          <ion-item class="item-thumbnail-left">
+            {{ item.name }}
+          </ion-item>
+        </ion-list -->
+
+      <ion-list show-delete="true">
+        <ion-item ng-repeat="item in fileList" item="item" class="item-remove-animate item-icon-left">
+          {{ item.fullPath }}
+          <i class="icon ion-document" ng-show="{{ item.isFile }}"></i>
+          <i class="icon ion-folder" ng-show="{{ item.isDirectory }}"></i>
+          <ion-delete-button class="ion-minus-circled" ng-click="onItemDelete(item.fullPath)"></ion-delete-button>
+        </ion-item>
+      </ion-list>
+
+    </ion-content>
+</ion-view>
